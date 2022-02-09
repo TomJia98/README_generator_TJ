@@ -61,21 +61,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then((data) => {
-        let readmeFormat = `
-        # ${data.projectName}
-        \n
-        ${}
-        \n
-        ## Description
-        \n
-        ${data.projectDesc}
-        \n
-
-        `
-
-
-        console.log(data)})
+    .then((data) => {})
 }
 
 // Function call to initialize app

@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require("inquirer");
-const generateMarkdown = require("generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [  {
     type: 'input',
@@ -27,7 +27,9 @@ const questions = [  {
     type: 'list',
     message: 'Which license are you using?',
     name: 'projectLicense',
-    choices: ['email', 'phone', 'telekinesis'],// add license choices here
+    choices: [ "N/A", "Apache 2.0 License", '"Boost Software License 1.0"', "BSD 3-Clause License", "Eclipse Public License 1.0", "GNU GPL v3", "The Hippocratic License 2.1",
+"IBM Public License Version 1.0", "ISC License (ISC)", "The MIT License", "Mozilla Public License 2.0", "Public Domain Dedication and License (PDDL)", 
+"The Artistic License 2.0", "The Unlicense", "The Do What the F**k You Want to Public License"],// add license choices here
 },
 {
     type: 'input',
@@ -52,10 +54,29 @@ const questions = [  {
   ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    inquirer.prompt(questions);
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then((data) => {
+        let readmeFormat = `
+        # ${data.projectName}
+        \n
+        ${}
+        \n
+        ## Description
+        \n
+        ${data.projectDesc}
+        \n
+
+        `
+
+
+        console.log(data)})
+}
 
 // Function call to initialize app
 init();

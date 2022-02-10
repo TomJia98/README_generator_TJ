@@ -537,9 +537,47 @@ TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.projectName}
 
-`;
+  ${renderLicenseBadge(data.projectLicense)}
+
+  ## Description
+
+  ${data.projectDesc}
+
+  ## Table of Contents
+
+  ## Instillation
+
+  ${data.projectInstall}
+
+  ## Usage
+
+  ${data.projectUsage}
+
+  ## Licence
+
+  ${renderLicenseSection(data.projectLicense)}
+
+  ## Contribution
+
+  ${data.projectContribute}
+
+  ## Tests
+
+  ${data.projectTest}
+
+  ## Questions
+
+  ${data.projectQuestionsGithub}
+
+  For any more questions, feel free to contact me at ${data.projectQuestionsEmail}
+  `;
 }
 
-module.exports = generateMarkdown;
+function test(){
+
+  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+}
+
+module.exports = {generateMarkdown, test}

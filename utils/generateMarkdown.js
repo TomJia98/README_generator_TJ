@@ -547,7 +547,15 @@ function generateMarkdown(data) {
 
   ## Table of Contents
 
-  ## Instillation
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Licence](#licence)
+  - [Contribution](#contribution)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+  ## Installation
 
   ${data.projectInstall}
 
@@ -569,15 +577,12 @@ function generateMarkdown(data) {
 
   ## Questions
 
-  ${data.projectQuestionsGithub}
+  Visit my Github at
+  https://github.com/${data.projectQuestionsGithub}
 
   For any more questions, feel free to contact me at ${data.projectQuestionsEmail}
   `;
 }
 
-function test(){
 
-  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-}
-
-module.exports = {generateMarkdown, test}
+module.exports = {generateMarkdown}
